@@ -1,7 +1,7 @@
 <!-- CTA -->
 <section id="cta" class="wrapper style4">
 	<div class="inner">
-		<form id="contact-form" class="contact-form" method="post" data-success="Message sent successfully!">
+		<form id="contact-form" class="contact-form parallel" method="post" data-success="Message sent successfully!">
 			<div class="left">
 				<label for="name">Name</label>
 				<input id="name" type="text" name="name" class="field" required /><br />
@@ -23,6 +23,27 @@
 
 				<input type="submit" value="Send" />
 			</div>
+		</form>
+
+		<form id="contact-form" class="contact-form stacked" method="post" data-success="Message sent successfully!">
+			<header>
+				<h2>Questions?</h2>
+				<p>Shoot us a message. We would love to speak with you
+					about how your child can get involved and learn to code.</p>
+			</header>
+
+			<label for="name">Name</label>
+			<input id="name" type="text" name="name" class="field" required /><br />
+
+			<label for="email">Email</label>
+			<input id="email" type="email" name="email" class="field" required /><br />
+
+			<label for="message">Message</label>
+			<textarea id="message" name="message" required></textarea><br />
+
+			<div class="g-recaptcha" data-sitekey="6LdZXBUUAAAAAAcwiwus50XnDLbLx-yI16XYL8Ov"></div>
+
+			<input type="submit" value="Send" />
 		</form>
 	</div>
 </section>
