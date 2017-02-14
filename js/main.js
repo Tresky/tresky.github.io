@@ -1,6 +1,6 @@
 function sendEmail(token) {
 	// var contactFormHost = 'http://oviedo-code-camp.herokuapp.com/',
-  var contactFormHost = 'http://localhost:9292/',
+  var contactFormHost = 'https://oviedo-code-camp.herokuapp.com/',
       form = $('#contact-form'),
       notice = form.find('#notice');
 
