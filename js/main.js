@@ -1,17 +1,12 @@
-function sendEmail(token) {
-	// var contactFormHost = 'http://oviedo-code-camp.herokuapp.com/',
+function setupEmailRecaptcha() {
   var contactFormHost = 'https://oviedo-code-camp.herokuapp.com/',
       form = $('#contact-form'),
       notice = form.find('#notice');
 
 	if (form.length) {
-    // showRecaptcha('recaptcha_widget');
-    var data = form.serialize();
-		data['g-recaptcha-response'] = token;
-		console.log('Submitting', form)
-    // form[0].submit(function(ev){
-			console.log('Submitted Form')
-      // ev.preventDefault();
+    form.submit(function(ev){
+			var data = form.serialize();
+      ev.preventDefault();
 
       $.ajax({
         type: 'POST',
@@ -27,7 +22,6 @@ function sendEmail(token) {
               break;
 
             case 'failure_captcha':
-              // showRecaptcha('recaptcha_widget');
               notice.text(notice.data('captcha-failed')).fadeIn();
               break;
 
@@ -39,60 +33,11 @@ function sendEmail(token) {
           notice.text(notice.data('error')).fadeIn();
         }
       });
-    // });
+    });
   }
 }
 
-// function showRecaptcha(element) {
-//   Recaptcha.create('6LdZXBUUAAAAAAcwiwus50XnDLbLx-yI16XYL8Ov', element, {
-//     theme: 'custom', // you can pick another at https://developers.google.com/recaptcha/docs/customization
-//     custom_theme_widget: 'recaptcha_widget'
-//   });
-// }
-//
-// function setupRecaptcha() {
-//   // var contactFormHost = 'http://oviedo-code-camp.herokuapp.com/',
-//   var contactFormHost = 'http://localhost:9292/',
-//       form = $('#contact-form'),
-//       notice = form.find('#notice');
-//
-//   if (form.length) {
-//     // showRecaptcha('recaptcha_widget');
-//
-//     form.submit(function(ev){
-//       ev.preventDefault();
-//
-//       $.ajax({
-//         type: 'POST',
-//         url: contactFormHost + 'send_email',
-//         data: form.serialize(),
-//         dataType: 'json',
-//         success: function(response) {
-//           switch (response.message) {
-//             case 'success':
-//               form.fadeOut(function() {
-//                 form.html('<h4>' + form.data('success') + '</h4>').fadeIn();
-//               });
-//               break;
-//
-//             case 'failure_captcha':
-//               // showRecaptcha('recaptcha_widget');
-//               notice.text(notice.data('captcha-failed')).fadeIn();
-//               break;
-//
-//             case 'failure_email':
-//               notice.text(notice.data('error')).fadeIn();
-//           }
-//         },
-//         error: function(xhr, ajaxOptions, thrownError) {
-//           notice.text(notice.data('error')).fadeIn();
-//         }
-//       });
-//     });
-//   }
-// }
-//
-// setupRecaptcha();
+setupEmailRecaptcha();
 
 
 
