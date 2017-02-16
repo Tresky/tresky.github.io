@@ -1899,7 +1899,7 @@
 	}
 
 #register {
-	padding: 100px;
+	padding: 100px 100px 30px 100px;
 
 	.first-name {
 		display: inline-block;
@@ -1924,6 +1924,18 @@
 		float: left;
 		width: 20%;
 		margin-left: 29px;
+	}
+
+	.submit-button {
+		display: inline-block;
+		float: right;
+		width: 50%;
+		text-align: center;
+
+		button {
+			margin-top: 30px;
+			display: inline-block;
+		}
 	}
 
 	.section {
