@@ -1415,6 +1415,22 @@
 			right: 0;
 			top: 0;
 
+			// Use a horizontal menu bar if the screen is wide.
+			// If the screen is narrow (mobile), use a menu hamburger.
+			> .menu-toggle {
+				display: none;
+			}
+
+			@include breakpoint(small) {
+				> .menu-bar {
+					display: none;
+				}
+
+				> .menu-toggle {
+					display: inline-block;
+				}
+			}
+
 			> ul {
 				list-style: none;
 				margin: 0;
