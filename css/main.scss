@@ -1901,6 +1901,13 @@
 #register {
 	padding: 100px 100px 30px 100px;
 
+	.inner {
+		.title {
+			font-size: 1.8rem;
+			margin-bottom: 30px;
+		}
+	}
+
 	.first-name {
 		display: inline-block;
 		float: left;
