@@ -37,7 +37,74 @@ function setupEmailRecaptcha() {
   }
 }
 
+function setupRegisterForm() {
+  var host = 'https://oviedo-code-camp.herokuapp.com/',
+      form = $('#registerForm'),
+      notice = form.find('#notice');
+
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_y90CqBEMbLJc4pKxddK5TOQ8',
+    image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+    locale: 'auto',
+    zipCode: true,
+    allowRememberMe: false,
+    token: function(token) {
+      // You can access the token ID with `token.id`.
+      // Get the token ID to your server-side code for use.
+
+      var data = form.serialize();
+      data += '&stripeToken=' + token.id + '&stripeEmail=' + token.email;
+
+      $.ajax({
+        type: 'POST',
+        url: host + 'register',
+        data: data,
+        dataType:'json',
+        success: function(response) {
+          switch (response.message) {
+            case 'success':
+              form.fadeOut(function() {
+                form.html('<h2 style="text-align:center;">Thank you for registering for camp!</h2><br /><h4 style="text-align:center;">Please check your inbox for a confirmation and receipt of your payment.We will contact you again as the camp approaches.<br /><br />We are really excited to meet you and look forward to the summer!</h4>').fadeIn();
+              });
+              break;
+
+            case 'failure_creatingcustomer':
+              notice.text('We encountered an error with Stripe. Please refresh the page and try again.').fadeIn();
+              break;
+
+            case 'failure_creatingcharge':
+              notice.text('We encountered an error with Stripe. Please refresh the page and try again.').fadeIn();
+              break;
+            case 'failure_missingparams':
+              notice.text('We encountered an error with our servers. We apologize for the inconvenience.').fadeIn();
+          }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          notice.text('We encountered an error with our servers. We apologize for the inconvenience.').fadeIn();
+        }
+      })
+    }
+  });
+
+  var submit = $('#submit');
+  if (submit.length) {
+    submit.click(function(ev) {
+      ev.preventDefault();
+      handler.open({
+        name: 'Oviedo Code Camp',
+        description: 'Preparing your child for the future.',
+        amount: 35000
+      });
+    });
+  }
+
+  window.addEventListener('popstate', function() {
+    handler.close();
+  });
+}
+
 setupEmailRecaptcha();
+setupRegisterForm();
 
 
 

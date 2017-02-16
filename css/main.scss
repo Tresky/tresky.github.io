@@ -6,6 +6,11 @@
 @import 'font-awesome.min.css';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
 
+// Helpers
+.clearfix { overflow: auto; zoom: 1; }
+.left { float: left; }
+.right { float: right; }
+
 /*
 	Spectral by HTML5 UP
 	html5up.net | @ajlkn
@@ -281,6 +286,7 @@
 	}
 
 	input[type="text"],
+	input[type="number"],
 	input[type="password"],
 	input[type="email"],
 	select,
@@ -330,6 +336,7 @@
 	}
 
 	input[type="text"],
+	input[type="number"],
 	input[type="password"],
 	input[type="email"],
 	select {
@@ -1087,6 +1094,7 @@
 			}
 
 			input[type="text"],
+			input[type="number"],
 			input[type="password"],
 			input[type="email"],
 			select,
@@ -1889,3 +1897,49 @@
 			}
 		}
 	}
+
+#register {
+	padding: 100px;
+
+	.first-name {
+		display: inline-block;
+		float: left;
+		width: 43%;
+	}
+
+	.last-name {
+		display: inline-block;
+		float: right;
+		width: 50%;
+	}
+
+	.t-shirt-size {
+		display: inline-block;
+		float: left;
+		width: 20%;
+	}
+
+	.child-age {
+		display: inline-block;
+		float: left;
+		width: 20%;
+		margin-left: 29px;
+	}
+
+	.section {
+		width: 100%;
+		background-color: transparentize(_palette(bg), 0.6);
+		padding: 8px;
+		margin-bottom: 16px;
+		border-radius: 6px;
+
+		.title {
+			font-size: 1.3rem;
+			margin-bottom: 8px;
+		}
+
+		label {
+			margin-bottom: 4px;
+		}
+	}
+}
