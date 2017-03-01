@@ -19,7 +19,7 @@ description: |
   Learn to program in Python and
   building basic circuits
 baseurl: "" # the subpath of your site, e.g. /blog
-url:  # the base hostname & protocol for your site, e.g. http://example.com
+url:  https://oviedocodecamp.com  # the base hostname & protocol for your site, e.g. http://example.com
 
 # layouts_dir: frontend/_layouts
 # includes_dir: frontend/_includes
