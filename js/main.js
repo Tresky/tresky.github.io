@@ -93,7 +93,8 @@ function setupRegisterForm() {
       handler.open({
         name: 'Oviedo Code Camp',
         description: 'Preparing your child for the future.',
-        amount: 35000
+        amount: 35000,
+	    email: $('#email').val()
       });
     });
   }
