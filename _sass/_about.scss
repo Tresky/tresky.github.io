@@ -9,6 +9,7 @@
 
   .class-container {
     display: flex;
+    flex-direction: row;
 
     .class-choice {
       width: 49%;
@@ -42,13 +43,22 @@
         &:before {
           content: '';
           display: block;
-          background: orange;
+          background: #ef476f;
           height: 2px;
           max-width: 160px;
           width: 50%;
-          margin: 0 auto;
-          margin: 25px auto 20px auto;
+          margin: 10px auto 15px auto;
         }
+      }
+    }
+
+    @include breakpoint(small) {
+      flex-direction: column;
+
+      .class-choice {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 25px;
       }
     }
   }
