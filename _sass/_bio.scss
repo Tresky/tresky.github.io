@@ -1,13 +1,69 @@
+@import 'libs/skel';
+
+@include skel-breakpoints((
+  xlarge: '(max-width: 1680px)',
+  large: '(max-width: 1280px)',
+  medium: '(max-width: 980px)',
+  small: '(max-width: 736px)',
+  xsmall: '(max-width: 480px)'
+));
+
 #bio {
   .inner {
-    width: 90%;
+    width: 95%;
     header {}
+  }
+
+  .instructor-container {
+    display: flex;
+    flex-direction: row;
+
+    @include breakpoint(medium) {
+      flex-direction: column;
+      text-align: center;
+
+      .instructor {
+        width: 90%;
+
+        &:first-child {
+          margin-bottom: 25px;
+        }
+
+        &:last-child {
+          .name { text-align: right; }
+          .info {
+            .headshot { order: 2; }
+            .bio { order: 1; }
+          }
+        }
+      }
+    }
+
+    @include breakpoint(xsmall) {
+      flex-direction: column;
+      text-align: center;
+
+      .instructor {
+        width: 90%;
+        margin-bottom: 25px;
+
+        .name {
+          text-align: center !important;
+          display: block;
+        }
+
+        .info {
+          display: block;
+        }
+
+      }
+    }
   }
 
   .instructor {
     width: 50%;
     display: inline-block;
-    float: left;
+    // float: left;
 
     .name {
       text-align: left;
@@ -24,7 +80,8 @@
 
       .bio {
         display: inline-block;
-        text-align: left;
+        text-align: justify;
+        text-justify: inter-word;
         padding: 0 10px;
       }
     }
