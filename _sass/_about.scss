@@ -3,21 +3,25 @@
 
   }
 
+  header p {
+    color: white;
+  }
+
   .class-container {
     display: flex;
 
     .class-choice {
-      width: 50%;
-      padding: 20px;
-      border: 2px gray solid;
-      color: white;
-
-      &:first-child { border-right-width: 1px; }
-      &:last-child { border-left-width: 1px; }
+      width: 49%;
+      color: #111111;
+      margin-left: 1%;
+      background-color: white;
 
       .title {
         font-size: 2.0rem;
         margin-bottom: 8px;
+        background-color: #21b2a6;
+        line-height: 1.5;
+        color: white;
       }
 
       .ages {
@@ -31,7 +35,9 @@
       .info {
         margin-top: 8px;
         text-align: left;
-        padding: auto 10px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        padding: 0 26px;
 
         &:before {
           content: '';
