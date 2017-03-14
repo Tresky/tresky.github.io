@@ -1,0 +1,49 @@
+#about {
+  .inner {
+
+  }
+
+  .class-container {
+    display: flex;
+
+    .class-choice {
+      width: 50%;
+      padding: 20px;
+      border: 2px gray solid;
+      color: white;
+
+      &:first-child { border-right-width: 1px; }
+      &:last-child { border-left-width: 1px; }
+
+      .title {
+        font-size: 2.0rem;
+        margin-bottom: 8px;
+      }
+
+      .ages {
+        font-size: 1.0rem;
+      }
+
+      .dates {
+        font-size: 1.3rem;
+      }
+
+      .info {
+        margin-top: 8px;
+        text-align: left;
+        padding: auto 10px;
+
+        &:before {
+          content: '';
+          display: block;
+          background: orange;
+          height: 2px;
+          max-width: 160px;
+          width: 50%;
+          margin: 0 auto;
+          margin: 25px auto 20px auto;
+        }
+      }
+    }
+  }
+}
