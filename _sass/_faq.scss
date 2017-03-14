@@ -1,9 +1,46 @@
 #faq {
   .inner {
-    width: 50%;
+    width: 90%;
 
     header {
       text-align: center;
+    }
+  }
+
+  .column-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .question-container {
+      display: flex;
+      flex-direction: column;
+      width: 49%;
+      justify-content: space-between;
+
+      &:first-child {
+        margin-right: 2%;
+      }
+    }
+
+    @include breakpoint(small) {
+      flex-direction: column;
+
+      .question-container {
+        width: 100%;
+
+        ul.questions {
+          margin: 0;
+
+          .q {
+            font-size: 1.0rem;
+          }
+
+          .a {
+            font-size: 0.8rem;
+          }
+        }
+      }
     }
   }
 
@@ -16,23 +53,15 @@
       margin-bottom: 25px;
 
       .q {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         margin-bottom: 5px;
         position: relative;
-
-        // &:after {
-        //   content: '';
-        //   display: block;
-        //   background: black;
-        //   height: 2px;
-        //   // max-width: 35px;
-        //   width: 30%;
-        //   // margin: 0 auto;
-        // }
       }
 
       .a {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
+        text-align: justify;
+        text-justify: inter-word;
       }
     }
   }
