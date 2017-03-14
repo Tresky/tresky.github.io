@@ -1,0 +1,39 @@
+#faq {
+  .inner {
+    width: 50%;
+
+    header {
+      text-align: center;
+    }
+  }
+
+  ul.questions {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 25px;
+
+      .q {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+        position: relative;
+
+        // &:after {
+        //   content: '';
+        //   display: block;
+        //   background: black;
+        //   height: 2px;
+        //   // max-width: 35px;
+        //   width: 30%;
+        //   // margin: 0 auto;
+        // }
+      }
+
+      .a {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
