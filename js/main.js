@@ -110,10 +110,65 @@ function setupRegisterForm() {
   });
 }
 
+function loadClassData() {
+  var host = 'https://oviedo-code-camp.herokuapp.com/';
+
+  $.ajax({
+    type: 'GET',
+    url: host + 'classes',
+    dataType:'json',
+    success: function(classes) {
+      if ($('#about').length > 0) {
+        var elem = $('.elem.options-container');
+        var middle = $('.middle.options-container');
+
+        classes.forEach(function(camp) {
+          var dates = '';
+          var which = '';
+          if (camp.name == 'foundations-elem-1') {
+            dates = 'June 12-16';
+            which = 'elem';
+          } else if (camp.name == 'foundations-elem-2') {
+            dates = 'June 19-23';
+            which = 'elem';
+          } else if (camp.name == 'foundations-middle-1') {
+            dates = 'June 26-30';
+            which = 'middle';
+          } else if (camp.name == 'foundations-middle-2') {
+            dates = 'July 10-14';
+            which = 'middle';
+          }
+
+          var availability = 'Available';
+          if (camp.num_registered >= 9) {
+            availability = 'Almost Full';
+          }
+          if (camp.num_registered == 11) {
+            availability = 'Last Slot';
+          }
+          if (camp.num_registered >= 12) {
+            availability = 'Full';
+          }
+
+          var html = '<div class="class-option' + ((availability == 'Full') ? 'full' : '') + '">';
+          html += '<span class="date">' + dates + '</span>';
+          html += '<span class="availability">' + availability + '</span>';
+          html += '</div>';
+
+          if (which == 'elem') {
+            elem.append(html);
+          } else if (which == 'middle') {
+            middle.append(html);
+          }
+        });
+      }
+    }
+  });
+}
+
 setupEmailRecaptcha();
 setupRegisterForm();
-
-
+loadClassData();
 
 /*
 	Spectral by HTML5 UP
