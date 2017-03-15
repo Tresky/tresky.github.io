@@ -82,7 +82,7 @@ function setupRegisterForm() {
               notice.text('We encountered an error with Stripe. Please refresh the page and try again.').fadeIn();
               break;
             case 'failure_missingparams':
-              notice.text('We encountered an error with our servers. We apologize for the inconvenience. You have not been charged.').fadeIn();
+              notice.text('You are missing some fields that are required. Please review your form.').fadeIn();
           }
         },
         error: function(xhr, ajaxOptions, thrownError) {
