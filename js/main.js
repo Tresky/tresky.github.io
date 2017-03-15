@@ -61,6 +61,7 @@ function setupRegisterForm() {
         data: data,
         dataType:'json',
         success: function(response) {
+          notice.fadeOut();
           switch (response.message) {
             case 'success':
               form.fadeOut(function() {
@@ -71,16 +72,21 @@ function setupRegisterForm() {
             case 'failure_creatingcustomer':
               notice.text('We encountered an error with Stripe. Please refresh the page and try again.').fadeIn();
               break;
-
+            case 'failure_classfull':
+              notice.text('The class you are registering for is already full. Please select a different one.').fadeIn();
+              break;
+            case 'failure_wrongage':
+              notice.text('Your child does not meet the age requirements for this class.').fadeIn();
+              break;
             case 'failure_creatingcharge':
               notice.text('We encountered an error with Stripe. Please refresh the page and try again.').fadeIn();
               break;
             case 'failure_missingparams':
-              notice.text('We encountered an error with our servers. We apologize for the inconvenience.').fadeIn();
+              notice.text('We encountered an error with our servers. We apologize for the inconvenience. You have not been charged.').fadeIn();
           }
         },
         error: function(xhr, ajaxOptions, thrownError) {
-          notice.text('We encountered an error with our servers. We apologize for the inconvenience.').fadeIn();
+          notice.text('We encountered an error with our servers. We apologize for the inconvenience. You have not been charged.').fadeIn();
         }
       })
     }

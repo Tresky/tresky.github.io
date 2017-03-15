@@ -1921,40 +1921,67 @@
 		}
 	}
 
-	.first-name {
-		display: inline-block;
-		float: left;
-		width: 43%;
+	#notice {
+		background-color: #ef476f;
+		padding: 7px 12px;
+		border-radius: 5px;
+		margin-bottom: 15px;
+		display: none;
 	}
 
-	.last-name {
-		display: inline-block;
-		float: right;
-		width: 50%;
-	}
+	.name {
+		padding: 0 4px;
 
-	.t-shirt-size {
-		display: inline-block;
-		float: left;
-		width: 20%;
-	}
-
-	.child-age {
-		display: inline-block;
-		float: left;
-		width: 20%;
-		margin-left: 29px;
-	}
-
-	.submit-button {
-		display: inline-block;
-		float: right;
-		width: 50%;
-		text-align: center;
-
-		button {
-			margin-top: 30px;
+		.first-name {
 			display: inline-block;
+			float: left;
+			width: 43%;
+		}
+
+		.last-name {
+			display: inline-block;
+			float: right;
+			width: 50%;
+		}
+	}
+
+	.email {
+		// padding: 0 4px;
+	}
+
+	.misc {
+		padding: 0 4px;
+
+		.t-shirt-size {
+			display: inline-block;
+			float: left;
+			width: 20%;
+		}
+
+		.completed-grade {
+			display: inline-block;
+			float: left;
+			width: 20%;
+			margin-left: 29px;
+		}
+
+		.camp-selection {
+			display: inline-block;
+			float: left;
+			width: 25%;
+			margin-left: 92px;
+		}
+
+		.submit-button {
+			display: inline-block;
+			float: right;
+			width: 25%;
+			text-align: center;
+
+			button {
+				margin-top: 30px;
+				display: inline-block;
+			}
 		}
 	}
 
