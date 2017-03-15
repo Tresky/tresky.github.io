@@ -162,6 +162,30 @@ function loadClassData() {
           }
         });
       }
+
+      if ($('#register').length > 0) {
+        var container = $('#camp-selection');
+        classes.forEach(function(camp) {
+          if (camp.num_registered >= 12) {
+            return;
+          }
+
+          var title = '';
+          if (camp.name == 'foundations-elem-1') {
+            title = 'Foundations for Elementary (June 12-16)';
+          } else if (camp.name == 'foundations-elem-2') {
+            title = 'Foundations for Elementary (June 19-23)';
+          } else if (camp.name == 'foundations-middle-1') {
+            title = 'Foundations for Middle (June 26-30)';
+          } else if (camp.name == 'foundations-middle-2') {
+            title = 'Foundations for Middle (July 10-14)';
+          } else {
+            return;
+          }
+
+          container.append('<option value="' + camp.name + '">' + title + '</option>');
+        });
+      }
     }
   });
 }
