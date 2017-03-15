@@ -61,8 +61,12 @@
   }
 
   .instructor {
-    width: 50%;
+    width: 49%;
     display: inline-block;
+
+    &:first-child {
+      margin-right: 2%;
+    }
 
     .name {
       text-align: left;
@@ -81,6 +85,7 @@
         display: inline-block;
         text-align: justify;
         text-justify: inter-word;
+        line-height: 1.5;
         padding: 0 10px;
       }
     }
