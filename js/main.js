@@ -1,7 +1,20 @@
 function setupEmailRecaptcha() {
   var contactFormHost = 'https://oviedo-code-camp.herokuapp.com/',
-      form = $('#contact-form'),
-      notice = form.find('#notice');
+      formLarge = $('#contact-form.parallel'),
+      formStack = $('#contact-form.stacked'),
+      form = null,
+      notice = null;
+
+  if (formLarge.css('display') == 'block') {
+    notice = formLarge.find('#notice');
+    form = formLarge;
+  }
+  if (formStack.css('display') == 'block') {
+    notice = formStack.find('#notice');
+    form = formStack;
+  }
+
+  form.find('.captcha-container').html('<div class="g-recaptcha" data-sitekey="6LdZXBUUAAAAAAcwiwus50XnDLbLx-yI16XYL8Ov"></div>')
 
 	if (form.length) {
     form.submit(function(ev){
