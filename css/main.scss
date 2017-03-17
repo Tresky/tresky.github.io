@@ -1979,28 +1979,31 @@
 			margin-left: 7%;
 		}
 
-		.submit-button {
-			display: inline-block;
-			width: 18%;
-			margin-left: 2%;
+
+
+		.terms {
+			width: 20%;
+			padding: 7px;
+			margin-top: 21px;
+			font-size: 0.7rem;
 			text-align: center;
+			float: right;
 
-			button {
-				margin-top: 15px;
-				margin-bottom: 5px;
-				display: inline-block;
+			.agree {
+				opacity: 1;
+				float: left;
+				margin-top: 6px;
+				margin-right: 0;
 			}
+		}
+	}
 
-			.terms {
-				font-size: 0.6rem;
-				float: right;
+	.submit-button {
+		width: 100%;
+		text-align: center;
 
-				.agree {
-					opacity: 1;
-					float: left;
-					margin-right: 0;
-				}
-			}
+		button {
+			display: inline-block;
 		}
 	}
 
@@ -2079,20 +2082,29 @@
 					margin-left: 0;
 				}
 
-				.submit-button {
+				.terms {
 					width: 40%;
-					margin-top: -15px;
+					font-size: 0.7rem;
+					float: right;
+					text-align: center;
+					padding: 5px;
+					margin-top: 21px;
 
-					.terms {
-						font-size: 0.6rem;
-						float: right;
-
-						.agree {
-							opacity: 1;
-							float: left;
-							margin-right: 0;
-						}
+					.agree {
+						margin-top: 6px;
+						margin-right: 0;
+						opacity: 1;
+						float: left;
 					}
+				}
+			}
+
+			.submit-button {
+				width: 100%;
+				margin-top: 15px;
+
+				button {
+					margin: 0 auto;
 				}
 			}
 		}
