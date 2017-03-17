@@ -98,7 +98,7 @@ function setupRegisterForm() {
               notice.text('You must agree to the Terms and Conditions to register. You have not been charged yet.').fadeIn();
               break;
             case 'failure_creatingcustomer':
-              notice.text('We encountered an error with Stripe. Please refresh the page and try again.').fadeIn();
+              notice.text('We encountered an error with Stripe. Please refresh the page and try again. ' + response.error.message).fadeIn();
               break;
             case 'failure_classfull':
               notice.text('The class you are registering for is already full. Please select a different one.').fadeIn();
