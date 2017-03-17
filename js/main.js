@@ -192,7 +192,18 @@ function loadClassData() {
       }
 
       if ($('#register').length > 0) {
-        var container = $('#camp-selection');
+        var formLarge = $('#registerForm.large'),
+            formStack = $('#registerForm.stacked'),
+            form = null;
+
+        if (formLarge.css('display') == 'block') {
+          form = formLarge;
+        }
+        if (formStack.css('display') == 'block') {
+          form = formStack;
+        }
+
+        var container = form.find('#camp-selection');
         classes.forEach(function(camp) {
           if (camp.num_registered >= 12) {
             return;
