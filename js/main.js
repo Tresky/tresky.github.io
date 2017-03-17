@@ -128,7 +128,7 @@ function setupRegisterForm() {
         name: 'Oviedo Code Camp',
         description: 'Preparing your child for the future.',
         amount: 35000,
-	    email: $('#email').val()
+	       email: form.find('#email').val()
       });
     });
   }
