@@ -39,8 +39,19 @@ function setupEmailRecaptcha() {
 
 function setupRegisterForm() {
   var host = 'https://oviedo-code-camp.herokuapp.com/',
-      form = $('#registerForm'),
-      notice = form.find('#notice');
+      formLarge = $('#registerForm.large'),
+      formStack = $('#registerForm.stacked'),
+      form = null,
+      notice = null;
+
+  if (formLarge.css('display') == 'block') {
+    notice = formLarge.find('#notice');
+    form = formLarge;
+  }
+  if (formStack.css('display') == 'block') {
+    notice = formStack.find('#notice');
+    form = formStack;
+  }
 
   var handler = StripeCheckout.configure({
     key: 'pk_test_GcdOiiCVGjbgaFj5UeVZHKkC',
@@ -82,7 +93,7 @@ function setupRegisterForm() {
               notice.text('We encountered an error with Stripe. Please refresh the page and try again.').fadeIn();
               break;
             case 'failure_missingparams':
-              notice.text('You are missing some fields that are required. Please review your form.').fadeIn();
+              notice.text('You are missing some fields that are required. Please review your form. You were not charged.').fadeIn();
           }
         },
         error: function(xhr, ajaxOptions, thrownError) {
@@ -92,7 +103,7 @@ function setupRegisterForm() {
     }
   });
 
-  var submit = $('#submit');
+  var submit = form.find('#submit');
   if (submit.length) {
     submit.click(function(ev) {
       ev.preventDefault();
@@ -191,7 +202,11 @@ function loadClassData() {
 }
 
 setupEmailRecaptcha();
-setupRegisterForm();
+
+if ($('#registerForm').length > 0) {
+  setupRegisterForm();
+}
+
 loadClassData();
 
 /*
