@@ -352,7 +352,7 @@
 
 	input[type="checkbox"],
 	input[type="radio"], {
-		@include vendor('appearance', 'none');
+		// @include vendor('appearance', 'none');
 		display: block;
 		float: left;
 		margin-right: -2em;
@@ -1986,8 +1986,20 @@
 			text-align: center;
 
 			button {
-				margin-top: 30px;
+				margin-top: 15px;
+				margin-bottom: 5px;
 				display: inline-block;
+			}
+
+			.terms {
+				font-size: 0.6rem;
+				float: right;
+
+				.agree {
+					opacity: 1;
+					float: left;
+					margin-right: 0;
+				}
 			}
 		}
 	}
@@ -2069,6 +2081,18 @@
 
 				.submit-button {
 					width: 40%;
+					margin-top: -15px;
+
+					.terms {
+						font-size: 0.6rem;
+						float: right;
+
+						.agree {
+							opacity: 1;
+							float: left;
+							margin-right: 0;
+						}
+					}
 				}
 			}
 		}
@@ -2083,6 +2107,30 @@
 
 		#registerForm.stacked {
 			display: block;
+		}
+	}
+}
+
+.terms-page {
+	padding: 70px 20px 50px 20px;
+	text-align: justify;
+	justify-content: space-between;
+
+	.title {
+		font-size: 2.0rem;
+		margin-bottom: 25px;
+	}
+
+	.header {
+		font-weight: bold;
+		margin-bottom: 15px;
+		margin-top: 20px;
+	}
+
+	.list {
+		.item {
+			padding-left: 15px;
+			margin-top: 10px;
 		}
 	}
 }

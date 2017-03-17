@@ -88,11 +88,15 @@ function setupRegisterForm() {
           notice.fadeOut();
           switch (response.message) {
             case 'success':
+              $('.header').fadeOut();
               form.fadeOut(function() {
                 form.html('<h2 style="text-align:center;">Thank you for registering for camp!</h2><br /><h4 style="text-align:center;">Please check your inbox for a confirmation and receipt of your payment.We will contact you again as the camp approaches.<br /><br />We are really excited to meet you and look forward to the summer!</h4>').fadeIn();
               });
               break;
 
+            case 'failure_mustagree':
+              notice.text('You must agree to the Terms and Conditions to register. You have not been charged yet.').fadeIn();
+              break;
             case 'failure_creatingcustomer':
               notice.text('We encountered an error with Stripe. Please refresh the page and try again.').fadeIn();
               break;
@@ -214,7 +218,9 @@ function loadClassData() {
   });
 }
 
-setupEmailRecaptcha();
+if ($('#cta').length > 0) {
+  setupEmailRecaptcha();
+}
 
 if ($('#registerForm').length > 0) {
   setupRegisterForm();
