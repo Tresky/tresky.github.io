@@ -1,8 +1,8 @@
 <section id="register">
   <div class="inner">
-    <div class="title">We'd Love to See You At Camp!</div>
+    <div class="header">Excited to See You At Camp!</div>
 
-    <form id="registerForm" class="register-form" method="post" action="https://oviedo-code-camp.herokuapp.com/register" data-success="Registered Successfully!">
+    <form id="registerForm" class="register-form large" method="post" action="https://oviedo-code-camp.herokuapp.com/register" data-success="Registered Successfully!">
       <div id="notice"></div>
 
       <div class="parent-information section clearfix">
@@ -82,5 +82,91 @@
         </div>
       </div>
     </form>
+
+
+    <form id="registerForm" class="register-form stacked" method="post" action="https://oviedo-code-camp.herokuapp.com/register" data-success="Registered Successfully!">
+      <div id="notice"></div>
+
+      <div class="parent-information section">
+        <div class="title">Parent's Information</div>
+
+        <div class="name">
+          <span class="first-name">
+            <label for="parent-first-name">First Name</label>
+            <input id="parent-first-name" type="text" name="parent_first_name" class="field" required /><br />
+          </span>
+          <span class="last-name">
+            <label for="parent-last-name">Last Name</label>
+            <input id="parent-last-name" type="text" name="parent_last_name" class="field" required /><br />
+          </span>
+        </div>
+
+        <span class="email">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" class="field" required /><br />
+        </span>
+      </div>
+
+      <div class="child-information section clearfix">
+        <div class="title">Child's Information</div>
+
+        <div class="name clearfix">
+          <span class="first-name">
+            <label for="child-first-name">First Name</label>
+            <input id="child-first-name" type="text" name="child_first_name" class="field" required /><br />
+          </span>
+          <span class="last-name">
+            <label for="child-last-name">Last Name</label>
+            <input id="child-last-name" type="text" name="child_last_name" class="field" required /><br />
+          </span>
+        </div>
+
+        <div class="misc" style="width:100%;">
+          <span class="t-shirt-size">
+            <label for="t-shirt-size">T-Shirt Size</label>
+            <select id="t-shirt-size" name="t_shirt_size">
+              <option value="na">-- Select --</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </span>
+
+          <span class="completed-grade">
+            <label for="completed-grade">Completed Grade</label>
+            <select id="completed-grade" name="child_completed_grade">
+              <option value="na">-- Select --</option>
+              <option value="1">1st</option>
+              <option value="2">2nd</option>
+              <option value="3">3rd</option>
+              <option value="4">4th</option>
+              <option value="5">5th</option>
+              <option value="6">6th</option>
+              <option value="7">7th</option>
+              <option value="8">8th</option>
+              <option value="9">9th</option>
+              <option value="10">10th</option>
+              <option value="11">11th</option>
+              <option value="12">12th</option>
+            </select><br />
+          </span>
+        </div>
+
+        <div class="misc">
+          <span class="camp-selection">
+            <label for="camp-selection">Camp Selection</label>
+            <select id="camp-selection" name="camp_selection">
+              <option value="na">-- Select --</option>
+            </select>
+          </span>
+
+          <span class="submit-button">
+            <button id="submit">Submit</button>
+          </span>
+        </div>
+      </div>
+    </form>
+
+
   </div>
 </section>

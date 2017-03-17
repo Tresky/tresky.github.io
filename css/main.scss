@@ -1914,8 +1914,16 @@
 #register {
 	padding: 100px 100px 30px 100px;
 
+	#registerForm.stacked {
+		display: none;
+	}
+
+	#registerForm.large {
+		display: block;
+	}
+
 	.inner {
-		.title {
+		.header {
 			font-size: 1.8rem;
 			margin-bottom: 30px;
 		}
@@ -1951,31 +1959,30 @@
 
 	.misc {
 		padding: 0 4px;
+		display: flex;
+		flex-direction: row;
 
 		.t-shirt-size {
 			display: inline-block;
-			float: left;
 			width: 20%;
 		}
 
 		.completed-grade {
 			display: inline-block;
-			float: left;
 			width: 20%;
-			margin-left: 29px;
+			margin-left: 3%;
 		}
 
 		.camp-selection {
 			display: inline-block;
-			float: left;
-			width: 35%;
-			margin-left: 92px;
+			width: 28%;
+			margin-left: 7%;
 		}
 
 		.submit-button {
 			display: inline-block;
-			float: right;
-			width: 15%;
+			width: 18%;
+			margin-left: 2%;
 			text-align: center;
 
 			button {
@@ -1999,6 +2006,79 @@
 
 		label {
 			margin-bottom: 4px;
+		}
+	}
+
+	#registerForm.large {
+		display: block;
+	}
+
+	@include breakpoint(medium) {
+		padding: 80px 50px 30px 50px;
+
+		#registerForm.large {
+			display: block;
+		}
+
+		#registerForm.stacked {
+			display: none;
+		}
+	}
+
+	@include breakpoint(small) {
+		padding: 80px 30px 30px 30px;
+
+		.inner .header {
+			padding: 0 20px;
+			padding-bottom: 15px;
+			font-size: 1.6rem;
+			text-align: center;
+		}
+
+		#registerForm.large {
+			display: none;
+		}
+
+		#registerForm.stacked {
+			display: block;
+
+			.name {
+				.first-name {
+					width: 48%;
+				}
+
+				.last-name {
+					width: 48%;
+				}
+			}
+
+			.misc {
+				.t-shirt-size {
+					width: 48%;
+				}
+
+				.completed-grade {
+					width: 48%;
+					margin-left: 4%;
+				}
+
+				.camp-selection {
+					width: 60%;
+					margin-left: 0;
+				}
+
+				.submit-button {
+					width: 40%;
+				}
+			}
+		}
+	}
+
+	@include breakpoint(xsmall) {
+		padding: 80px 0 30px 0;
+
+		.section {
+			border-radius: 0;
 		}
 	}
 }

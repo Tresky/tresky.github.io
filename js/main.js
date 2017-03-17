@@ -172,13 +172,13 @@ function loadClassData() {
 
           var title = '';
           if (camp.name == 'foundations-elem-1') {
-            title = 'Foundations for Elementary (June 12-16)';
+            title = 'Elementary (June 12-16)';
           } else if (camp.name == 'foundations-elem-2') {
-            title = 'Foundations for Elementary (June 19-23)';
+            title = 'Elementary (June 19-23)';
           } else if (camp.name == 'foundations-middle-1') {
-            title = 'Foundations for Middle (June 26-30)';
+            title = 'Middle (June 26-30)';
           } else if (camp.name == 'foundations-middle-2') {
-            title = 'Foundations for Middle (July 10-14)';
+            title = 'Middle (July 10-14)';
           } else {
             return;
           }
