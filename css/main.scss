@@ -1669,6 +1669,10 @@
 			@include padding(7em, 3em);
 			height: auto;
 
+			.logo {
+				top: 50px;
+			}
+
 			h2 {
 				font-size: 1.25em;
 			}
