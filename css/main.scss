@@ -1524,6 +1524,19 @@
 		text-align: center;
 		opacity: 1;
 
+		.logo {
+			@include vendor('transition', ('top 0.75s ease', 'opacity 0.75s ease'));
+			width: 410px;
+			top: 110px;
+			position: absolute;
+			left: 10%;
+		}
+
+		.inner {
+			position: absolute;
+			right: 10%;
+		}
+
 		h2 {
 			@include vendor('transform', 'scale(1)');
 			@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
@@ -1557,7 +1570,7 @@
 		}
 
 		p {
-			@include vendor('transform', 'scale(1)');
+			@include vendor('transform', 'translateY(0)');
 			@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
 			letter-spacing: _size(letter-spacing-alt);
 			text-transform: uppercase;
@@ -1566,6 +1579,12 @@
 			a {
 				color: inherit;
 			}
+		}
+
+		.actions {
+			@include vendor('transform', 'translateY(0)');
+			@include vendor('transition', ('transform 0.6s ease', 'opacity 0.6s ease'));
+			opacity: 1;
 		}
 
 		.more {
@@ -1619,11 +1638,36 @@
 		// 	top: 0;
 		// 	opacity: 0;
 		// }
+		//
+		@include breakpoint(large) {
+			.logo {
+				left: 5%;
+			}
+
+			.inner {
+				right: 5%;
+			}
+		}
+
+		@include breakpoint(medium) {
+			.logo {
+				left: 50%;
+				opacity: 0.3;
+				@include vendor('transform', 'translateX(-50%)');
+			}
+
+			.inner {
+				padding-top: 40px;
+				background-color: rgba(50, 50, 50, 0.7);
+				width: 100%;
+				left: 50%;
+				@include vendor('transform', 'translateX(-50%)');
+			}
+		}
 
 		@include breakpoint(small) {
 			@include padding(7em, 3em);
 			height: auto;
-			min-height: 0;
 
 			h2 {
 				font-size: 1.25em;
@@ -1641,6 +1685,11 @@
 
 	body.is-loading {
 		#banner {
+			.logo {
+				opacity: 0;
+				top: 200px;
+			}
+
 			h2 {
 				@include vendor('transform', 'scale(0.95)');
 				opacity: 0;
@@ -1651,13 +1700,18 @@
 			}
 
 			p {
-				@include vendor('transform', 'scale(1)');
+				@include vendor('transform', 'translateY(50px)');
 				@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
 				opacity: 0;
+				top: 50px;
+				position: relative;
 			}
 
 			.actions {
 				opacity: 0;
+				@include vendor('transform', 'translateY(50px)');
+				// @include vendor('transition-delay', '0.2s');
+				// @include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
 			}
 
 			.more {
