@@ -1687,7 +1687,13 @@
 		}
 
 		@include breakpoint(xsmall) {
+			.logo {
+				top: 233px;
+				width: 370px;
+			}
+
 			.inner {
+				top: 50px;
 				padding-left: 10px;
 				padding-right: 10px;
 			}
@@ -1699,6 +1705,12 @@
 			.logo {
 				opacity: 0;
 				top: 200px;
+			}
+
+			@include breakpoint(xsmall) {
+				.logo {
+					top: 300px;
+				}
 			}
 
 			h2 {
