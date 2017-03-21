@@ -1685,6 +1685,13 @@
 				display: none;
 			}
 		}
+
+		@include breakpoint(xsmall) {
+			.inner {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
 	}
 
 	body.is-loading {
